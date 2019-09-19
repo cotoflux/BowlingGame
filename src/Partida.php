@@ -4,9 +4,32 @@ namespace KataBowling;
 
 class Partida
 {
-    function devolverNumero($numero)
+    public $puntosDeYoda;
+    public $puntosDeVader;
+    public $iniciarPartida=false;
+    function devolverPuntuacion($numero)
     { 
         return $numero;
+    }
+
+    function inicianJuegoAZero($totalPuntosYoda, $totalPuntosVader)
+    {
+        return $totalPuntosYoda=0;
+        return $totalPuntosVader=0;
+
+    }
+    public function iniciarJuego()
+    {
+        $this->puntosDeVader = 0;
+        $this->puntosDeYoda = 0;
+    }
+
+    public function iniciarPartida1()
+    {   
+        $this->iniciarPartida =true;
+        $this->puntosDeVader = 0;
+        $this->puntosDeYoda = 0;
+        
     }
 }
 

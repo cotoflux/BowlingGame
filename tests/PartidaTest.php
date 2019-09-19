@@ -5,14 +5,31 @@ use PHPUnit\Framework\TestCase;
 
 class PartidaTest extends TestCase
 {
-    function testDevuelveNumeroPartidas()
+    function testInicialDevuelvePuntuacion()
     {
         $numero = 4;
-        $partida = new Partida();
-        $resultado = $partida->devolverNumero($numero);     
+        $testNumero = new Partida();
+        $resultado = $testNumero->devolverPuntuacion($numero);     
         $this->assertIsInt($resultado);
-       //$this->assertTrue(true);
+        $this->assertIsNumeric($resultado);
+
+  
     }
+    function testJugadoresAZero()
+    {
+        $totalPuntosYoda=0;
+        $totalPuntosVader=0;
+        $partida=new Partida();
+        $partida->iniciarJuego();
+
+        $this->assertEquals($totalPuntosYoda,$partida->puntosDeYoda);
+        $this->assertEquals($totalPuntosVader,$partida->puntosDeVader);
+    }
+    function iniciarPartida()
+    {
+        
+    }
+
 }
 
 
