@@ -20,15 +20,21 @@ class PartidaTest extends TestCase
         $totalPuntosYoda=0;
         $totalPuntosVader=0;
         $partida=new Partida();
-        $partida->iniciarJuego();
+        $partida->iniciarPartida();
 
         $this->assertEquals($totalPuntosYoda,$partida->puntosDeYoda);
         $this->assertEquals($totalPuntosVader,$partida->puntosDeVader);
     }
-    function iniciarPartida()
+    function testIniciarPartida()
     {
-        
+        $partida=new Partida();
+        $this->assertFalse($partida->inicioPartida);
+        // $partida->iniciarJuego();
+        $this->assertTrue($partida->inicioPartida);
     }
+
+    //function primeraTiradaYoda()
+
 
 }
 

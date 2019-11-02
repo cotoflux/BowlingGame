@@ -1,7 +1,7 @@
 {
 
     "autoload": {
-        "psr-4": {"KataBowling\\":"src/"}
+        "psr-4": {"KataBowling\\":"src/", "Bowling2\\":"src/bowling2/"}
     },
     "require-dev": {
         "phpunit/phpunit": "^8"

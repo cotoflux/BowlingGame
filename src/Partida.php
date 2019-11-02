@@ -1,65 +1,47 @@
 <?php
 
 namespace KataBowling;
+use KataBowling\Tirada;
+//include Ronda;
 
 class Partida
 {
     public $puntosDeYoda;
     public $puntosDeVader;
-    public $iniciarPartida=false;
+    public $inicioPartida=false;
+
     function devolverPuntuacion($numero)
     { 
         return $numero;
     }
-
-    function inicianJuegoAZero($totalPuntosYoda, $totalPuntosVader)
+    public function iniciarJuego(Tirada $totalYoda, Tirada $totalVader)
     {
-        return $totalPuntosYoda=0;
-        return $totalPuntosVader=0;
-
-    }
-    public function iniciarJuego()
-    {
-        $this->puntosDeVader = 0;
-        $this->puntosDeYoda = 0;
+        $this->reiniciarPuntuaciones();
+        $this->reinicarPartida();
     }
 
-    public function iniciarPartida1()
+    public function reinicarPartida()
     {   
-        $this->iniciarPartida =true;
+        $this->setIniciarPartidaTrue();
+    }
+
+    public function reiniciarPuntuaciones()
+    {
         $this->puntosDeVader = 0;
         $this->puntosDeYoda = 0;
-        
+    }
+
+    private function setIniciarPartidaTrue()
+    {
+        if($this->puntosDeYoda >0 && $this->puntosDeVader >0){
+            return false;
+        }
+        $this->inicioPartida = true;
     }
 }
 
 
 
-$player1='yoda';
-$player2='darth v';
-$totalPuntosYoda=0;
-$totalPuntosVader=0;
-
-function partida1Yoda(){  
-
-    $valorTirada1= rand(0,10);
-    $tirada1=$valorTirada1;
-    echo "Valor Yoda:".$tirada1."<br/>";
-    
-    $valorTirada2= rand(0,10);
-   
-}
-
-function partida1Vader(){  
-
-    $valorTirada1= rand(0,10);
-    $tirada1=$valorTirada1;
-    echo "Valor Vader:".$tirada1;
-    $valorTirada2= rand(0,10);
-    
-}
-partida1Yoda();
-partida1Vader();
 
 
 
